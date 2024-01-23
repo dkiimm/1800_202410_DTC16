@@ -8,13 +8,12 @@ This browser based web application to ...
 List team members and/or short bio's here... 
 * My name is João, which english speakers struggle to pronounce, so you can call me "Jao"
 * Myung Kyu (Daniel) Kim. I am excited to start this project.
-* ...
 * Tannar Gillespie. I am looking forward to working on a meaningful project.
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
 * HTML, CSS, JavaScript
-* Bootstrap 5.0 (Frontend library)
+* Bootstrap 5.0 (Frontend library)s
 * Firebase 8.0 (BAAS - Backend as a Service)
 * ...
 
