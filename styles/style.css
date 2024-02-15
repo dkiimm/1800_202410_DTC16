@@ -1,1 +1,10 @@
+.material-icons {
+  font-size: 40px;
+}
 
+.material-icons:active {
+  color: #badeba;
+}
+.bg-info {
+  background-color: #008000 !important;
+}
