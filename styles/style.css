@@ -5,6 +5,34 @@
 .material-icons:active {
   color: #badeba;
 }
+
 .bg-info {
   background-color: #008000 !important;
+}
+
+.filter-button {
+  background-color: #3a3a3a;
+  color: white;
+  outline: none !important;
+  /*This doesn't remove the blue outline, ask for help*/
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  border-radius: 1em;
+  margin: 0.5em 0.25em;
+}
+
+#filter-button {
+  background-color: #3a3a3a;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  border-radius: 1em;
+  margin: 0.5em 0.25em;
+}
+
+#filter-button:hover {
+  background-color: white;
+  color: #3a3a3a;
 }
