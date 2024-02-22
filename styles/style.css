@@ -9,6 +9,10 @@
 .bg-info {
   background-color: #008000 !important;
 }
+.log-in-button{
+  background-color: #239523 !important;
+  color: white;
+}
 
 #filter-button {
   background-color: #3a3a3a;
