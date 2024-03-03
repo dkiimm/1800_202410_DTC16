@@ -31,3 +31,23 @@
   background-color: white;
   color: #3a3a3a;
 }
+
+#create_event_icon{
+  color: black;
+}
+
+#create_event_icon:hover{
+  color: white;
+}
+#create_event_icon:visited{
+  color: black;
+}
+
+#create_heading{
+  background-color: #239523;
+}
+
+#create_event_button:hover{
+  background-color: #9ad09a;
+  color: black;
+}
