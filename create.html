@@ -46,14 +46,15 @@
   <head>
     <h1 class="text-center p-5" id="create_heading">Create Event</h1>
   </head>
-  <section id="create_event_options" class="d-flex flex-column " style="gap: 1rem;">
+  <section id="create_event_options" class="d-flex flex-column " style="gap: 10px;">
     <!-- select sport -->
-    <div class="d-flex" id="select-sport" style="margin-top: 10px;">
+    <br>
+    <div class="d-flex" id="select-sport" style="margin-top: 10px; height: 50px;">
       <div class="d-flex align-items-center px-4">
         <span class="px-4" style="font-size: 20px;">Select Sport</span>
       </div>
       <div class="dropdown">
-        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; height: 50px;">
           Dropdown button
         </button>
         <ul class="dropdown-menu" id="select-sport">
@@ -64,22 +65,22 @@
       </div>
     </div>
     <!-- select date -->
-    <div class="p-4 d-flex" id="select_date">
+    <div class="px-3 py-3 d-flex" id="select_date" style="margin-top: 10px;">
       <p class="px-4" style="font-size: 20px;">Select Date</p>
       <input type="date" id="event_date" name="event_date" style="width: 100%; height: 50px;">
     </div>
     <!-- select time -->
-    <div class="p-4 d-flex" id="select_time">
+    <div class="px-3 d-flex" id="select_time">
       <p class="px-4" style="font-size: 20px;" >Select Time</p>
       <input type="time" id="event_time" name="event_time" style="width: 100%; height: 50px;">
     </div>
     <!-- select num of participants -->
-    <div class="p-4 d-flex" id="select_participants">
+    <div class="px-3 py-3 d-flex" id="select_participants">
       <p class="px-4 d-flex justify-content-center" style="font-size: 20px;">Number of Participants</p>
       <input type="text" id="event_participants" name="event_participants" style="width: 100%; height: 50px;">
     </div>
     <!-- location -->
-    <div class="p-4 d-flex" id="select_participants">
+    <div class="px-3 d-flex" id="select_participants" style="padding-bottom: 20px;">
       <p class="px-4 d-flex justify-content-center" style="font-size: 20px;">Location</p>
       <input type="text" id="event_location" name="event_location" style="width: 100%; height: 50px;">
     </div>

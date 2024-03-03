@@ -19,7 +19,7 @@ function confirmCreateEvent() {
   var location = $("#event_location").val();
   var numPlayers = $("#event_participants").val();
 
-  var message = "Are you sure you want to create an event for " + sport + " on " + date + " at " + time + " for " + skill + " players at " + location + " for " + numPlayers + " players?";
+  var message = "Confirm Event:\nSport: " + sport + "\nDate: " + date + "\nTime: " + time + "\nSkill: " + skill + "\nLocation: " + location + "\nNumber of Players: " + numPlayers;
   var result = window.confirm(message);
 
   if (result) {
