@@ -9,7 +9,8 @@
 .bg-info {
   background-color: #008000 !important;
 }
-.log-in-button{
+
+.log-in-button {
   background-color: #239523 !important;
   color: white;
 }
@@ -32,22 +33,36 @@
   color: #3a3a3a;
 }
 
-#create_event_icon{
+#event-card {
+  background-color: #3a3a3a;
+  color: white;
+  outline: none !important;
+  /*This doesn't remove the blue outline, ask for help*/
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  border-radius: 1em;
+  margin: 0.5em 0.25em;
+  padding: 0.25em 1em;
+}
+
+#create_event_icon {
   color: black;
 }
 
-#create_event_icon:hover{
+#create_event_icon:hover {
   color: white;
 }
-#create_event_icon:visited{
+
+#create_event_icon:visited {
   color: black;
 }
 
-#create_heading{
+#create_heading {
   background-color: #239523;
 }
 
-#create_event_button:hover{
+#create_event_button:hover {
   background-color: #9ad09a;
   color: black;
 }
