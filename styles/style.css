@@ -39,11 +39,12 @@
   outline: none !important;
   /*This doesn't remove the blue outline, ask for help*/
   font-weight: bold;
-  text-align: center;
+  font-size: 18px;
+  text-align: left;
   display: block;
   border-radius: 1em;
-  margin: 0.5em 0.25em;
-  padding: 0.25em 1em;
+  margin: 0.5em 0.5em;
+  padding: 1em 1em;
 }
 
 #create_event_icon {
