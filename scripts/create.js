@@ -48,12 +48,15 @@ function confirmCreateEvent() {
   }
 }
 
-
+function cancelCreate() {
+  window.location.href = "main.html";
+}
 
 function setup() {
   $("#select-sport .dropdown-item").click(displaySelectedSport);
   $("#select-skill .dropdown-item").click(displaySelectedSkill);
   $("#create_event_button").off('click').click(confirmCreateEvent);
+  $("#cancel_event_button").off('click').click(cancelCreate);
 }
 
 $(document).ready(setup);
