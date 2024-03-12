@@ -85,3 +85,7 @@
 #cancel_event_button, #create_event_button {
   height: 50px;
 }
+
+#future-events{
+  padding: 0px;
+}
