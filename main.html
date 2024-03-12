@@ -91,51 +91,67 @@
     <div class="col-auto justify-content-center" style="margin: 1em;">
       <div class="row justify-content-center">
 
+
+
         <!-- future event cards go here -->
+
+
+        
         <div id="future-events"></div>
-        <!--Event Card-->
-        <button type="button" class="btn btn-primary btn-lg btn-block" id="event-card">
-          <div class="col-md">
-            <div id="event-card-banner">
-              <div class="row justify-content-center">
-                <span class="col-auto material-symbols-outlined" style="padding: 0; font-size: 30px;">
-                  sports_soccer
-                </span>
-                <p class="col-auto" style="margin-bottom: 0; font-size: 18px;" id="card-sport">Sport: <span
-                    id="replace-sport">(Insert sport here)</span>
-                </p>
+
+
+
+        <!-- template for cards -->
+        <template id="event_template">
+          <button type="button" class="btn btn-primary btn-lg btn-block" id="event-card">
+            <div class="col-md">
+              <div id="event-card-banner">
+                <div class="row justify-content-center">
+                  <span class="col-auto material-symbols-outlined" style="padding: 0; font-size: 30px;">
+                    sports_soccer
+                  </span>
+                  <p class="col-auto" style="margin-bottom: 0; font-size: 18px;" id="card-sport">Sport: <span
+                      id="replace-sport">(Insert sport here)</span>
+                  </p>
+                </div>
+                <div class="row justify-content-center">
+                  <span class="col-auto material-symbols-outlined" style="padding: 0">
+                    hotel_class
+                  </span>
+                  <p class="col-auto" style="margin: 0" id="card-skill">Skill: <span id="replace-skill">(Skill level)</span></p>
+                </div>
               </div>
-              <div class="row justify-content-center">
+            </div>
+            <div class="col-auto" style="padding: 1em 1em 0 1em;">
+              <div class="row">
                 <span class="col-auto material-symbols-outlined" style="padding: 0">
-                  hotel_class
+                  location_on
                 </span>
-                <p class="col-auto" style="margin: 0" id="card-skill">Skill: <span id="replace-skill">(Skill level)</span></p>
+                <div class="col-auto gap-0">
+                  <p class="col-auto" style="margin-bottom: 0;" id="card-location">Location:
+                  <p style="font-weight:normal; margin-bottom: 0;"><span id="replace-location">(Insert full address here)</span>
+                  </p>
+                  <p style="font-size: 14px" id="card-distance">Distance: <span id="replace-distance">(Insert distance
+                      here)</span></p>
+                  </p>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-auto" style="padding: 1em 1em 0 1em;">
-            <div class="row">
-              <span class="col-auto material-symbols-outlined" style="padding: 0">
-                location_on
-              </span>
-              <div class="col-auto gap-0">
-                <p class="col-auto" style="margin-bottom: 0;" id="card-location">Location:
-                <p style="font-weight:normal; margin-bottom: 0;"><span id="replace-location">(Insert full address here)</span></p>
-                <p style="font-size: 14px" id="card-distance">Distance: <span id="replace-distance">(Insert distance here)</span></p>
+              <div class="row justify-content-left">
+                <span class="col-auto material-symbols-outlined" style="padding: 0">
+                  person_search
+                </span>
+                <p class="col-auto" style="margin: 0" id="card-host">Host:
+                <p style="font-weight:normal; margin: 0;">(Insert host username here)</p>
                 </p>
               </div>
             </div>
-            <div class="row justify-content-left">
-              <span class="col-auto material-symbols-outlined" style="padding: 0">
-                person_search
-              </span>
-              <p class="col-auto" style="margin: 0" id="card-host">Host:
-              <p style="font-weight:normal; margin: 0;">(Insert host username here)</p>
-              </p>
-            </div>
-          </div>
-        </button>
+          </button>
+        </template>
+
+
+
         <!--Event Card-->
+        
         <button type="button" class="btn btn-primary btn-lg btn-block" id="event-card">
           <div class="col-md">
             <div id="event-card-banner">

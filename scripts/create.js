@@ -24,18 +24,37 @@ function confirmCreateEvent() {
 
   if (result) {
     // User clicked OK, proceed with event creation
-    window.location.href = "main.html";
+    var eventRef = db.collection("events");
+
+    eventRef.add({
+      sport: sport,
+      date: date,
+      time: time,
+      skill: skill,
+      location: location,
+      numPlayers: numPlayers
+    })
+    .then(function(docRef) {
+      console.log("Document written with ID: ", docRef.id);
+      // Optionally, you can redirect the user to another page or perform other actions here
+      window.location.href = "main.html";
+    })
+    .catch(function(error) {
+      console.error("Error adding document: ", error);
+    });
   } else {
     // User clicked Cancel, do not proceed with event creation
     window.location.href = "create.html";
   }
-  
 }
+
+
 
 function setup() {
   $("#select-sport .dropdown-item").click(displaySelectedSport);
   $("#select-skill .dropdown-item").click(displaySelectedSkill);
-  $("#create_event_button").click(confirmCreateEvent);
+  $("#create_event_button").off('click').click(confirmCreateEvent);
 }
 
 $(document).ready(setup);
+
