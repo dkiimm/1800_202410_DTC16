@@ -18,3 +18,29 @@ firebase.auth().onAuthStateChanged(user=> {
 }
 
 getNameFromAuth();
+
+function DisplayCards() {
+  let cardTemplate = document.getElementById('event_template'); // Define cardTemplate
+
+  db.collection('events').get()
+    .then(querySnapshot => {
+      querySnapshot.forEach(doc => {
+
+        let card = cardTemplate.content.cloneNode(true);
+
+        card.querySelector('#replace-sport').innerText = doc.data().sport;
+        card.querySelector('#replace-skill').innerText = doc.data().skill; // Assuming 'skill' field exists in your data
+        card.querySelector('#replace-location').innerText = doc.data().location;
+        console.log(doc.data().sport);
+        console.log(doc.data().location);
+        console.log(doc.data().date);
+
+        document.getElementById('future-events').appendChild(card);
+      });
+    })
+    .catch(error => {
+      console.error('Error getting documents: ', error);
+    });
+}
+
+DisplayCards();
