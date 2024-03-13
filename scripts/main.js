@@ -31,6 +31,7 @@ function DisplayCards() {
         card.querySelector('#replace-sport').innerText = doc.data().sport;
         card.querySelector('#replace-skill').innerText = doc.data().skill; // Assuming 'skill' field exists in your data
         card.querySelector('#replace-location').innerText = doc.data().location;
+        // card.querySelector('#replace-date').innerText = doc.data().date;
         console.log(doc.data().sport);
         console.log(doc.data().location);
         console.log(doc.data().date);
