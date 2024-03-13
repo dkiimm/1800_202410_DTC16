@@ -25,22 +25,36 @@ function confirmCreateEvent() {
   if (result) {
     // User clicked OK, proceed with event creation
     var eventRef = db.collection("events");
+    var userID = firebase.auth().currentUser.uid;
+    var host = db.collection("users").doc(userID).get()
+    .then(doc => {
+      if (doc.exists) {
+        // Document exists, you can access its data using doc.data()
+        var hostName = doc.data().name;
+        console.log("Host name:", hostName);
+        // Now you can use the hostName variable as needed
 
-    eventRef.add({
-      sport: sport,
-      date: date,
-      time: time,
-      skill: skill,
-      location: location,
-      numPlayers: numPlayers
-    })
-    .then(function(docRef) {
-      console.log("Document written with ID: ", docRef.id);
-      // Optionally, you can redirect the user to another page or perform other actions here
-      window.location.href = "main.html";
-    })
-    .catch(function(error) {
-      console.error("Error adding document: ", error);
+        eventRef.add({
+          sport: sport,
+          date: date,
+          time: time,
+          skill: skill,
+          location: location,
+          numPlayers: numPlayers,
+          host: hostName
+        })
+        .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+          // Optionally, you can redirect the user to another page or perform other actions here
+          window.location.href = "main.html";
+        })
+        .catch(function(error) {
+          console.error("Error adding document: ", error);
+        });
+      } else {
+        // Document does not exist
+        console.log("No such document!");
+      }
     });
   } else {
     // User clicked Cancel, do not proceed with event creation
