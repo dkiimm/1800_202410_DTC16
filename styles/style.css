@@ -61,6 +61,65 @@
   padding: 1em 1em;
 }
 
+/*For the event page itself*/
+#big-event-card {
+  background-color: #3a3a3a;
+  color: white;
+  outline: none !important;
+  /*This doesn't remove the blue outline, ask for help*/
+  font-weight: bold;
+  font-size: 22px;
+  text-align: left;
+  display: block;
+  border-radius: 1em;
+  margin: 0.5em 0.5em;
+  padding: 1em 1em;
+}
+
+#big-event-card-banner {
+  background-color: white;
+  color: #3a3a3a;
+  outline: none !important;
+  /*This doesn't remove the blue outline, ask for help*/
+  font-weight: bold;
+  font-size: 20px;
+  height: 100%;
+  text-align: left;
+  display: block;
+  border-radius: 1em;
+  padding: 1em 1em;
+}
+
+#event-join-button {
+  background-color: #239523;
+  color: white;
+  outline: none !important;
+  /*This doesn't remove the blue outline, ask for help*/
+  font-weight: bold;
+  font-size: 20px;
+  height: 100%;
+  text-align: left;
+  display: block;
+  border-radius: 1em;
+  padding: 1em 1em;
+  margin-bottom: 0.5em;
+}
+
+#event-join-button-joined {
+  background-color: white;
+  color: #3a3a3a;
+  outline: none !important;
+  /*This doesn't remove the blue outline, ask for help*/
+  font-weight: bold;
+  font-size: 20px;
+  height: 100%;
+  text-align: left;
+  display: block;
+  border-radius: 1em;
+  padding: 1em 1em;
+  margin-bottom: 0.5em;
+}
+
 #create_event_icon {
   color: black;
 }
@@ -82,10 +141,11 @@
   color: black;
 }
 
-#cancel_event_button, #create_event_button {
+#cancel_event_button,
+#create_event_button {
   height: 50px;
 }
 
-#future-events{
+#future-events {
   padding: 0px;
 }
