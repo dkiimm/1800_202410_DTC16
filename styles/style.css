@@ -15,7 +15,8 @@
   color: white;
 }
 
-#filter-button {
+.filter-button,
+.filter-button:hover {
   background-color: #3a3a3a;
   color: white;
   outline: none !important;
@@ -27,11 +28,6 @@
   margin: 0.5em 0.25em;
   padding: 0.25em 1em;
 }
-
-/* #filter-button:hover {
-  background-color: white;
-  color: #3a3a3a;
-} */
 
 #event-card {
   background-color: #3a3a3a;
