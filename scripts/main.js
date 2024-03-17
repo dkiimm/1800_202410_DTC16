@@ -1,20 +1,20 @@
-function getNameFromAuth(){
-  
-firebase.auth().onAuthStateChanged(user=> {
-  if (user){
-    console.log(user.uid); //print the uid in the browser console
-    console.log(user.displayName);  //print the user name in the browser console
-    userName = user.displayName;
+function getNameFromAuth() {
 
-    document.getElementById('name-goes-here').innerText = user.displayName;
-    //method #2:  insert using jquery
-    // $("#name-goes-here").text(userName); //using jquery
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      console.log(user.uid); //print the uid in the browser console
+      console.log(user.displayName);  //print the user name in the browser console
+      userName = user.displayName;
 
-  }else{
+      document.getElementById('name-goes-here').innerText = user.displayName;
+      //method #2:  insert using jquery
+      // $("#name-goes-here").text(userName); //using jquery
 
-  }
-})
-  
+    } else {
+
+    }
+  })
+
 }
 
 getNameFromAuth();
@@ -33,9 +33,11 @@ function DisplayCards() {
         card.querySelector('#replace-location').innerText = doc.data().location;
         card.querySelector('#replace-host').innerText = doc.data().host;
         // card.querySelector('#replace-date').innerText = doc.data().date;
-        console.log(doc.data().sport);
-        console.log(doc.data().location);
-        console.log(doc.data().date);
+
+        //No need to log into console after functionality is working
+        //console.log(doc.data().sport);
+        //console.log(doc.data().location);
+        //console.log(doc.data().date);
 
         document.getElementById('future-events').appendChild(card);
       });
