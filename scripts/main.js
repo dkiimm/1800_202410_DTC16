@@ -1,5 +1,4 @@
 function getNameFromAuth() {
-
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       console.log(user.uid); //print the uid in the browser console
@@ -14,10 +13,7 @@ function getNameFromAuth() {
 
     }
   })
-
 }
-
-getNameFromAuth();
 
 function DisplayCards() {
   let cardTemplate = document.getElementById('event_template'); // Define cardTemplate
@@ -27,6 +23,12 @@ function DisplayCards() {
       querySnapshot.forEach(doc => {
 
         let card = cardTemplate.content.cloneNode(true);
+
+        card.querySelector('#event-card').addEventListener("click", () => {
+          console.log("AAA")
+          //Later add functionality to get data from the specific event
+          window.location = "event.html"
+        });
 
         card.querySelector('#replace-sport').innerText = doc.data().sport;
         card.querySelector('#replace-skill').innerText = doc.data().skill; // Assuming 'skill' field exists in your data
@@ -47,4 +49,9 @@ function DisplayCards() {
     });
 }
 
-DisplayCards();
+function setup() {
+  getNameFromAuth();
+  DisplayCards();
+}
+
+$(document).ready(setup);
