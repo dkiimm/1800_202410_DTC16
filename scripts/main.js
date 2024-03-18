@@ -25,9 +25,8 @@ function DisplayCards() {
         let card = cardTemplate.content.cloneNode(true);
 
         card.querySelector('#event-card').addEventListener("click", () => {
-          console.log("AAA")
           //Later add functionality to get data from the specific event
-          window.location = "event.html"
+          window.location = "event.html?docID=" + doc.id;
         });
 
         card.querySelector('#replace-sport').innerText = doc.data().sport;

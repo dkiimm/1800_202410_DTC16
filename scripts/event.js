@@ -1,5 +1,20 @@
 var joined = false;
 
+function displayEventInfo() {
+    let params = new URL(window.location.href);
+    let ID = params.searchParams.get("docID");
+
+    db.collection("events")
+        .doc(ID)
+        .get()
+        .then(doc => {
+            $('#replace-sport').text(doc.data().sport);
+            $('#replace-skill').text(doc.data().skill);
+            $('#replace-location').text(doc.data().location);
+            $('#replace-host').text(doc.data().host);
+        });
+}
+
 function updateJoinBtn() {
     var id = ""
     var buttonContent = ""
@@ -41,6 +56,8 @@ function clickJoinBtn() {
 function setup() {
     $("#event-join-button").click(clickJoinBtn)
     updateJoinBtn()
+
+    displayEventInfo()
 }
 
 $(document).ready(setup);
