@@ -1,6 +1,28 @@
+//Later find a way to put this inside functions
 var joined = false;
 
-function displayEventInfo() {
+async function getUsername() {
+    // Check if the user is logged in:
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            console.log(user.uid); // Let's know who the logged-in user is by logging their UID
+            currentUser = db.collection("users").doc(user.uid); // Go to the Firestore document of the user
+            currentUser.get().then(userDoc => {
+                // Get the user name
+                let userName = userDoc.data().name;
+                console.log(userName);
+                //$("#name-goes-here").text(userName); // jQuery
+                return username = userName;
+            })
+        }
+        else {
+            console.log("No user is logged in."); // Log a message when no user is logged in
+            return null
+        }
+    })
+}
+
+async function displayEventInfo() {
     let params = new URL(window.location.href);
     let ID = params.searchParams.get("docID");
 
@@ -12,8 +34,29 @@ function displayEventInfo() {
             $('#replace-skill').text(doc.data().skill);
             $('#replace-location').text(doc.data().location);
             $('#replace-host').text(doc.data().host);
+
+            return doc;
         });
 }
+
+//Currently does not work
+/*
+async function checkIfJoined() {
+    username = await getUsername();
+    doc = await displayEventInfo();
+    console.log(username);
+    console.log(doc);
+
+    var hasJoined = false;
+    if (doc.data().participants.some(e => username)) {
+        console.log("a")
+        hasJoined = true;
+    }
+    else {
+        hasJoined = false;
+    }
+}
+*/
 
 function updateJoinBtn() {
     var id = ""
@@ -53,7 +96,7 @@ function clickJoinBtn() {
     updateJoinBtn()
 }
 
-function setup() {
+async function setup() {
     $("#event-join-button").click(clickJoinBtn)
     updateJoinBtn()
 
