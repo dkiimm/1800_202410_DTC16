@@ -21,7 +21,7 @@ function confirmCreateEvent() {
 
   // Check if any of the input values are blank
   if (!sport || !date || !time || !skill || !location || !numPlayers) {
-    alert("Enter all fields");
+    alert("Enter All Fields");
     window.location.href = "create.html";
     return; // Exit the function early
   }
