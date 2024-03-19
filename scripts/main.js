@@ -20,6 +20,8 @@ function DisplayCards() {
 
   db.collection('events').get()
     .then(querySnapshot => {
+      document.getElementById('future-events').innerHTML = ""
+
       querySnapshot.forEach(doc => {
 
         let card = cardTemplate.content.cloneNode(true);
