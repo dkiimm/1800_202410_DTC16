@@ -19,6 +19,13 @@ function confirmCreateEvent() {
   var location = $("#event_location").val();
   var numPlayers = $("#event_participants").val();
 
+  // Check if any of the input values are blank
+  if (!sport || !date || !time || !skill || !location || !numPlayers) {
+    alert("Enter all fields");
+    window.location.href = "create.html";
+    return; // Exit the function early
+  }
+
   var message = "Confirm Event:\nSport: " + sport + "\nDate: " + date + "\nTime: " + time + "\nSkill: " + skill + "\nLocation: " + location + "\nNumber of Players: " + numPlayers;
   var result = window.confirm(message);
 
