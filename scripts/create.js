@@ -18,6 +18,7 @@ function confirmCreateEvent() {
   var skill = $("#select-skill .dropdown-toggle").text();
   var location = $("#event_location").val();
   var numPlayers = $("#event_participants").val();
+  userID = firebase.auth().currentUser.uid;
 
   // Check if any of the input values are blank
   if (!sport || !date || !time || !skill || !location || !numPlayers) {
@@ -48,7 +49,8 @@ function confirmCreateEvent() {
           skill: skill,
           location: location,
           numPlayers: numPlayers,
-          host: hostName
+          host: hostName,
+          author: userID
         })
         .then(function(docRef) {
           console.log("Document written with ID: ", docRef.id);
