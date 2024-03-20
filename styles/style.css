@@ -7,7 +7,8 @@
 }
 
 .bg-info {
-  background-color: #008000 !important;
+  background-color: #239523 !important;
+  color: white;
 }
 
 .log-in-button {
@@ -116,15 +117,12 @@
   margin-bottom: 0.5em;
 }
 
-#create_event_icon {
-  color: black;
-}
-
-#create_event_icon:hover {
+#create_event_icon,
+#create_event_icon:visited {
   color: white;
 }
 
-#create_event_icon:visited {
+#create_event_icon:hover {
   color: black;
 }
 
