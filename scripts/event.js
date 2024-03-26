@@ -16,6 +16,8 @@ function displayEventInfo(setup) {
             $('#replace-skill').text(doc.data().skill);
             $('#replace-location').text(doc.data().location);
             $('#replace-host').text(doc.data().host);
+            $('#replace-date').text(doc.data().date);
+            $('#replace-time').text(doc.data().time);
 
             let participants = doc.data().participants
             let joined = false;

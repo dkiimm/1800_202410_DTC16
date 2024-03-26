@@ -118,18 +118,34 @@
           </div>
         </div>
         <div class="col-auto" style="padding: 1em 1em 0 1em;">
+
           <div class="row">
             <span class="col-auto material-symbols-outlined" style="padding: 0">
               location_on
             </span>
-            <div class="col-auto gap-0">
-              <p class="col-auto" style="margin-bottom: 0;" id="card-location">Location:
-              <p style="font-weight:normal; margin-bottom: 0;"><span id="replace-location">Loading...</span>
-              </p>
-              </p>
-            </div>
+            <p class="col-auto" style="margin-bottom: 0;" id="card-location">Location:
             <p style="font-weight:normal; margin: 0;" id="replace-location">Loading...</p>
+            </p>
           </div>
+
+          <div class="row justify-content-left">
+            <span class="col-auto material-symbols-outlined" style="padding: 0">
+              calendar_month
+            </span>
+            <p class="col-auto" style="margin: 0" id="card-date">Date:
+            <p style="font-weight:normal; margin: 0;" id="replace-date">Loading...</p>
+            </p>
+          </div>
+
+          <div class="row justify-content-left">
+            <span class="col-auto material-symbols-outlined" style="padding: 0">
+              schedule
+            </span>
+            <p class="col-auto" style="margin: 0" id="card-time">Time:
+            <p style="font-weight:normal; margin: 0;" id="replace-time">Loading...</p>
+            </p>
+          </div>
+
           <div class="row justify-content-left">
             <span class="col-auto material-symbols-outlined" style="padding: 0">
               person_search
@@ -138,27 +154,16 @@
             <p style="font-weight:normal; margin: 0;" id="replace-host">Loading...</p>
             </p>
           </div>
-          <div class="row">
-            <div class="d-flex align-items-center">
-              <span class="material-symbols-outlined" style="margin-right: 10px;">
-                calendar_month
-              </span>
-              <p class="col-auto mb-0" id="card-date">Date: </p>
-            </div>
-              <p style="font-weight:normal; margin-bottom: 0;"><span id="replace-date">Loading...</span>
-              </p>
-              </p>
-            </div>
-            
-            <div class="row">
-              <div class="d-flex align-items-center">
-                <span class="material-symbols-outlined" style="margin-right: 10px;">
-                  schedule
-                </span>
-                <p class="col-auto mb-0" id="card-time">Time: </p>
-              </div>
-                <p style="font-weight:normal; margin-bottom: 0;"><span id="replace-time">Loading...</span></p>
-              </div>
+
+          <div class="row justify-content-left">
+            <span class="col-auto material-symbols-outlined" style="padding: 0">
+              groups
+            </span>
+            <p class="col-auto" style="margin: 0" id="card-participants">Participants:
+            <p style="font-weight:normal; margin: 0;" id="replace-participants">Loading...</p>
+            </p>
+          </div>
+
         </div>
       </button>
     </template>
@@ -168,7 +173,7 @@
     <br>
     <br>
 
-   
+
 
     <!-- Fixed bottom nav -->
     <nav class="fixed-bottom py-3 px-4 bg-info justify-content navbar">
