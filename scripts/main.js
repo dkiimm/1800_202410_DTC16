@@ -42,7 +42,7 @@ function DisplayCards() {
 
 
 
-        document.getElementById('future-events').appendChild(card);
+        document.getElementById('future-events').prepend(card);
       });
     })
     .catch(error => {
