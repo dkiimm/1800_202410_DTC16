@@ -24,13 +24,17 @@ function displayEventInfo(setup) {
 
             if (participants == null || participants.length == 0) $('#replace-participants').text("None");
             else {
+                p_list = ""
+                end = ", "
                 for (let i = 0; i < participants.length; i++) {
-                    $('#replace-participants').text(participants[i] + "\n")
+                    if (i == participants.length - 1) end = ""
+                    p_list += participants[i] + end
 
                     if (participants[i] == localStorage.getItem("userName")) {
                         joined = true;
                     }
                 }
+                $('#replace-participants').text(p_list)
             }
 
             if (setup) updateJoinBtn(joined)
