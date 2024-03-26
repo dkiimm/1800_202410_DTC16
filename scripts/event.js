@@ -11,11 +11,8 @@ function displayEventInfo() {
             $('#replace-skill').text(doc.data().skill);
             $('#replace-location').text(doc.data().location);
             $('#replace-host').text(doc.data().host);
-            $('#replace-participants').text("aaa");
 
             var participants = doc.data().participants
-            console.log(participants)
-            console.log(doc.data().participants)
 
             if (participants == null || participants.length == 0) $('#replace-participants').text("None");
             else {
