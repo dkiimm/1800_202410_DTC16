@@ -151,3 +151,9 @@
 #future-events {
   padding: 0px;
 }
+
+#homeImg {
+  width: 400px;
+  margin-bottom: 50px;
+  border-radius: 30px;
+}
