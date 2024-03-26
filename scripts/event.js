@@ -1,4 +1,4 @@
-function displayEventInfo() {
+function displayEventInfo(setup) {
     let params = new URL(window.location.href);
     let ID = params.searchParams.get("docID");
     localStorage.setItem("eventID", ID)
@@ -17,7 +17,8 @@ function displayEventInfo() {
             $('#replace-location').text(doc.data().location);
             $('#replace-host').text(doc.data().host);
 
-            var participants = doc.data().participants
+            let participants = doc.data().participants
+            let joined = false;
 
             if (participants == null || participants.length == 0) $('#replace-participants').text("None");
             else {
@@ -29,6 +30,8 @@ function displayEventInfo() {
                     }
                 }
             }
+
+            if (setup) updateJoinBtn(joined)
 
         })
 }
@@ -47,7 +50,7 @@ function updateJoinBtn(joined) {
             participants = doc.data().participants
             if (participants == null) participants = [];
 
-            //Always removes duplicates
+            //Always removes duplicates if there are any
             for (let i = 0; i < participants.length; i++) {
                 if (participants[i] == localStorage.getItem("userName")) {
                     participants.splice(i, 1);
@@ -94,7 +97,7 @@ function updateJoinBtn(joined) {
             $(id).empty()
             $(id).append(buttonContent)
 
-            displayEventInfo()
+            displayEventInfo(false)
         })
 }
 
@@ -105,7 +108,7 @@ function clickJoinBtn() {
 function setup() {
     $("#event-join-button").click(clickJoinBtn)
 
-    displayEventInfo()
+    displayEventInfo(true)
 }
 
 $(document).ready(setup);
