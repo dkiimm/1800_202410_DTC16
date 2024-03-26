@@ -28,13 +28,14 @@ function displayEventInfo(setup) {
                 end = ", "
                 for (let i = 0; i < participants.length; i++) {
                     if (i == participants.length - 1) end = ""
-                    p_list += participants[i] + end
+                    p_list += "<a href='profile.html?userID=" + participants[i] + "'>" + participants[i] + end + "</a>"
 
                     if (participants[i] == localStorage.getItem("userName")) {
                         joined = true;
                     }
                 }
-                $('#replace-participants').text(p_list)
+                $('#replace-participants').text("")
+                $('#replace-participants').append(p_list)
             }
 
             if (setup) updateJoinBtn(joined)
