@@ -15,7 +15,7 @@ function getNameFromAuth() {
 function DisplayCards() {
   let cardTemplate = document.getElementById('event_template'); // Define cardTemplate
 
-  db.collection('events').get()
+  db.collection('events').orderBy('date').get()
     .then(querySnapshot => {
       document.getElementById('future-events').innerHTML = ""
 
