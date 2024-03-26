@@ -1,5 +1,4 @@
-function DisplayCards() {
-  let cardTemplate = document.getElementById('event_template'); // Define cardTemplate
+function GetUser() {
   let user = firebase.auth().currentUser;
 
   if (!user) {
@@ -7,7 +6,26 @@ function DisplayCards() {
     return;
   }
 
-  let userID = user.uid;
+  params = new URL(window.location.href);
+  userPage = params.searchParams.get("userID");
+  if (userPage == null) {
+    DisplayCards(user.uid)
+  }
+  else {
+    console.log("a")
+    db.collection('users')
+      .where("name", "==", userPage)
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          DisplayCards(doc.id)
+        })
+      })
+  }
+}
+
+function DisplayCards(userID) {
+  let cardTemplate = document.getElementById('event_template'); // Define cardTemplate
 
   db.collection('events')
     .where("author", "==", userID)
@@ -41,7 +59,7 @@ function DisplayCards() {
 // Call the function to display the cards when the authentication state changes
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
-    DisplayCards(); // Call the function only when the user is signed in
+    GetUser();
   } else {
     console.error('No user signed in');
   }
