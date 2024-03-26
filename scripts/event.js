@@ -3,6 +3,11 @@ function displayEventInfo() {
     let ID = params.searchParams.get("docID");
     localStorage.setItem("eventID", ID)
 
+    if (ID == null) {
+        alert("No event found")
+        window.location = "main.html"
+    }
+
     db.collection("events")
         .doc(ID)
         .get()
@@ -51,6 +56,10 @@ function updateJoinBtn(joined) {
             }
 
             if (joined) {
+                if (localStorage.getItem("userName") == null) {
+                    alert("You must log in to join an event!")
+                    return null
+                }
                 id = "#event-join-button-joined"
                 $("#event-join-button").attr("id", "event-join-button-joined");
                 buttonContent = `
@@ -95,9 +104,6 @@ function clickJoinBtn() {
 
 function setup() {
     $("#event-join-button").click(clickJoinBtn)
-
-    //Temporary
-    localStorage.setItem("userName", "user")
 
     displayEventInfo()
 }
