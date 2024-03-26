@@ -111,8 +111,13 @@ function clickJoinBtn() {
     updateJoinBtn(localStorage.getItem("joined") === 'false')
 }
 
+function clickBackBtn() {
+    history.back()
+}
+
 function setup() {
     $("#event-join-button").click(clickJoinBtn)
+    $("#event-back-button").click(clickBackBtn)
 
     displayEventInfo(true)
 }
