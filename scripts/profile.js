@@ -1,7 +1,6 @@
 function GetUser() {
   let user = firebase.auth().currentUser;
-
-
+  console.log(user)
 
   if (!user) {
     console.error('No user signed in');
@@ -65,35 +64,6 @@ function DisplayCards(userID) {
     });
 }
 
-function displayUserName(){
-  let user = firebase.auth().currentUser;
-  if (!user) {
-    console.error('No user signed in');
-    return;
-  }
-  db.collection('users')
-    .doc(user.uid)
-    .get()
-    .then(doc => {
-      document.getElementById('profileName').innerText = doc.data().name;
-    })
-    .catch(error => {
-      console.error('Error getting documents: ', error);
-    });
-
-}
-
-// Call the function to display the cards when the authentication state changes
-firebase.auth().onAuthStateChanged(user => {
-  if (user) {
-    GetUser();
-    displayUserName();
-  } else {
-    console.error('No user signed in');
-  }
-});
-
-
 function addFriend() {
   let user = firebase.auth().currentUser;
   if (!user) {
@@ -111,7 +81,7 @@ function addFriend() {
       if (doc.exists) {
         let hostName = doc.data().name;
         console.log("Host name:", hostName);
-        
+
         // Update the user document to add the friend
         return hostRef.set({
           friend: hostName
@@ -127,6 +97,15 @@ function addFriend() {
       console.log("Error getting/adding friend:", error);
     });
 }
+
+// Call the function to display the cards when the authentication state changes
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    GetUser();
+  } else {
+    console.error('No user signed in');
+  }
+});
 
 
 
