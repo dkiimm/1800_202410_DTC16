@@ -15,11 +15,12 @@ function DisplayCards(userID) {
         // Add event listener to the card button
         card.querySelector('#event-card').addEventListener("click", () => {
           // Later add functionality to get data from the specific event
-          window.location = "event.html?docID=" + doc.id;
+          window.location = "profile.html?userID=" + localStorage.getItem("friendID");
+          
         });
 
         // Set the sport text in the card
-        card.querySelector('#replace-sport').innerText = doc.data().friend;
+        card.querySelector('#replace-friend').innerText = doc.data().friend;
 
         // Append the card to the container
         futureEventsContainer.appendChild(card);
@@ -30,4 +31,10 @@ function DisplayCards(userID) {
     .catch(error => {
       console.error('Error getting document: ', error);
     });
+}
+
+function goToFriendProfile(){
+  document.querySelector('button').addEventListener('click', () => {
+    window.location = "profile.html?userID=" + localStorage.getItem("friendID");
+  })
 }

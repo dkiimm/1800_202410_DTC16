@@ -64,39 +64,31 @@ function DisplayCards(userID) {
     });
 }
 
+
 function addFriend() {
   let user = firebase.auth().currentUser;
   if (!user) {
     console.error('No user signed in');
     return;
   }
+
   let params = new URL(window.location.href);
   let userPage = params.searchParams.get("userID");
   let userID = firebase.auth().currentUser.uid;
   let hostRef = db.collection("users").doc(userID);
 
-  // Get the host's name and then add a friend
-  hostRef.get()
-    .then(doc => {
-      if (doc.exists) {
-        let hostName = doc.data().name;
-        console.log("Host name:", hostName);
-
-        // Update the user document to add the friend
-        return hostRef.set({
-          friend: hostName
-        }, { merge: true }); // Use merge: true to merge the new field with existing fields
-      } else {
-        console.log("No such document!");
-      }
-    })
-    .then(() => {
-      console.log("Friend added successfully!");
-    })
-    .catch(error => {
-      console.log("Error getting/adding friend:", error);
-    });
+  // Add the friend directly to the user's document
+  hostRef.update({
+    friends: firebase.firestore.FieldValue.arrayUnion(userPage)
+  })
+  .then(() => {
+    console.log("Friend added successfully!");
+  })
+  .catch(error => {
+    console.log("Error adding friend:", error);
+  });
 }
+
 
 // Call the function to display the cards when the authentication state changes
 firebase.auth().onAuthStateChanged(user => {
