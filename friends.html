@@ -42,8 +42,8 @@
   <br>
 
   <div class="d-flex align-items-center justify-content-center">
-    <span class="material-symbols-outlined">
-      diversity_1
+    <span class="material-symbols-outlined" style="font-size: 90px;">
+      group
     </span>
     <span style="font-size: 40px;">My Friends</span>
   </div>
@@ -61,7 +61,7 @@
       <br>
       <br>
       <br>
-      <a href="index.html">Log Out</a>
+      <a href="index.html" id="logout">Log Out</a>
     </div>
 
 
@@ -72,18 +72,14 @@
     <!-- template for cards -->
     <template id="event_template">
       <button type="button" class="btn btn-outline-primary btn-lg btn-block" id="event-card"
-        style="width: 340px; box-shadow: 10px 10px 28px rgba(0, 0, 0, 0.6); border-color: black;">
-        <div class="col-md">
-          <div id="event-card-banner">
-            <div class="row justify-content-center">
-              <span class="material-symbols-outlined">
-                diversity_1
-              </span>
-              <p class="col-auto" style="margin-bottom: 0; font-size: 18px;" id="card-sport"><span
-                  id="replace-sport">Loading...</span>
-              </p>
-            </div>
-          </div>
+        style="width: 340px; box-shadow: 10px 10px 28px rgba(0, 0, 0, 0.6); border-color: black; padding-right:120px">
+        <div class="d-flex justify-content-between align-items-center" style="padding-left: 20px;">
+          <span class="material-symbols-outlined">
+            group
+          </span>
+          <p class="col-auto mb-0" style="font-size: 18px;" id="card-sport">
+            <span id="replace-sport">Loading...</span>
+          </p>
         </div>
       </button>
     </template>
