@@ -15,7 +15,9 @@ function displayEventInfo(setup) {
             $('#replace-sport').text(doc.data().sport);
             $('#replace-skill').text(doc.data().skill);
             $('#replace-location').text(doc.data().location);
-            $('#replace-host').text(doc.data().host);
+            let host = "<a href='profile.html?userID=" + doc.data().host + "' id='profile-links'>" + doc.data().host + "</a>"
+            $('#replace-host').text("")
+            $('#replace-host').append(host)
             $('#replace-date').text(doc.data().date);
             $('#replace-time').text(doc.data().time);
 
@@ -28,7 +30,7 @@ function displayEventInfo(setup) {
                 end = ", "
                 for (let i = 0; i < participants.length; i++) {
                     if (i == participants.length - 1) end = ""
-                    p_list += "<a href='profile.html?userID=" + participants[i] + "'>" + participants[i] + end + "</a>"
+                    p_list += "<a href='profile.html?userID=" + participants[i] + "' id='profile-links'>" + participants[i] + end + "</a>"
 
                     if (participants[i] == localStorage.getItem("userName")) {
                         joined = true;

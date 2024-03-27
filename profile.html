@@ -56,21 +56,19 @@
   <!--Event card countainer-->
   <div class="container justify-content-center flex flex-column">
     <div class="col-auto justify-content-center flex" style="margin: 1em;">
-      <span style="text-align: center; display: flex; justify-content: center; font-size: 35px;">My Events</span>
+      <span
+        style="display: flex; justify-content: center; font-weight: bold; text-align: center; font-size: 30px; color: #3a3a3a"
+        id="page-title">Loading...</span>
       <!-- future event cards go here -->
-      <div class="row justify-content-center d-flex" style="width: 100%; margin: 0;" id="future-events"> Loading...
+      <div class="row justify-content-center d-flex" style="width: 100%; margin: 0;" id="future-events">
+        <p style="text-align: center; font-size: 30px; color: #3a3a3a">Loading...</p>
       </div>
     </div>
 
 
-
-
-
-
     <!-- template for cards -->
     <template id="event_template">
-      <button type="button" class="btn btn-outline-primary btn-lg btn-block" id="event-card"
-        style="width: 340px; box-shadow: 10px 10px 28px rgba(0, 0, 0, 0.6); border-color: black;">
+      <button type="button" class="btn btn-outline-primary btn-lg btn-block" id="event-card" style="width: 340px;">
         <div class="col-md">
           <div id="event-card-banner">
             <div class="row justify-content-center">
@@ -91,17 +89,34 @@
           </div>
         </div>
         <div class="col-auto" style="padding: 1em 1em 0 1em;">
+
           <div class="row">
             <span class="col-auto material-symbols-outlined" style="padding: 0">
               location_on
             </span>
-            <div class="col-auto gap-0">
-              <p class="col-auto" style="margin-bottom: 0;" id="card-location">Location:
-              <p style="font-weight:normal; margin-bottom: 0;"><span id="replace-location">Loading...</span>
-              </p>
-              </p>
-            </div>
+            <p class="col-auto" style="margin-bottom: 0;" id="card-location">Location:
+            <p style="font-weight:normal; margin: 0;" id="replace-location">Loading...</p>
+            </p>
           </div>
+
+          <div class="row justify-content-left">
+            <span class="col-auto material-symbols-outlined" style="padding: 0">
+              calendar_month
+            </span>
+            <p class="col-auto" style="margin: 0" id="card-date">Date:
+            <p style="font-weight:normal; margin: 0;" id="replace-date">Loading...</p>
+            </p>
+          </div>
+
+          <div class="row justify-content-left">
+            <span class="col-auto material-symbols-outlined" style="padding: 0">
+              schedule
+            </span>
+            <p class="col-auto" style="margin: 0" id="card-time">Time:
+            <p style="font-weight:normal; margin: 0;" id="replace-time">Loading...</p>
+            </p>
+          </div>
+
           <div class="row justify-content-left">
             <span class="col-auto material-symbols-outlined" style="padding: 0">
               person_search
@@ -110,27 +125,16 @@
             <p style="font-weight:normal; margin: 0;" id="replace-host">Loading...</p>
             </p>
           </div>
-          <div class="row">
-            <div class="d-flex align-items-center">
-              <span class="material-symbols-outlined" style="margin-right: 10px;">
-                calendar_month
-              </span>
-              <p class="col-auto mb-0" id="card-date">Date: </p>
-            </div>
-            <p style="font-weight:normal; margin-bottom: 0;"><span id="replace-date">Loading...</span>
-            </p>
+
+          <div class="row justify-content-left">
+            <span class="col-auto material-symbols-outlined" style="padding: 0">
+              groups
+            </span>
+            <p class="col-auto" style="margin: 0" id="card-participants">Participants:
+            <p style="font-weight:normal; margin: 0;" id="replace-participants">Loading...</p>
             </p>
           </div>
 
-          <div class="row">
-            <div class="d-flex align-items-center">
-              <span class="material-symbols-outlined" style="margin-right: 10px;">
-                schedule
-              </span>
-              <p class="col-auto mb-0" id="card-time">Time: </p>
-            </div>
-            <p style="font-weight:normal; margin-bottom: 0;"><span id="replace-time">Loading...</span></p>
-          </div>
         </div>
       </button>
     </template>
@@ -158,7 +162,7 @@
 
     </nav> -->
 
-        <nav id="footerPlaceholder"></nav>
+    <nav id="footerPlaceholder"></nav>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->

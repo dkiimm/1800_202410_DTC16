@@ -8,11 +8,13 @@ function GetUser() {
 
   params = new URL(window.location.href);
   userPage = params.searchParams.get("userID");
-  if (userPage == null) {
+  if (userPage == null || userPage == localStorage.getItem("userName")) {
+    $("#page-title").text("My hosted events")
     DisplayCards(user.uid)
   }
   else {
-    console.log("a")
+    $("#page-title").text(userPage + "'s hosted events")
+
     db.collection('users')
       .where("name", "==", userPage)
       .get()
@@ -47,6 +49,11 @@ function DisplayCards(userID) {
         card.querySelector('#replace-host').innerText = doc.data().host;
         card.querySelector('#replace-date').innerText = doc.data().date;
         card.querySelector('#replace-time').innerText = doc.data().time;
+        if (doc.data().participants != null) {
+          participants = doc.data().participants
+          card.querySelector('#replace-participants').innerText = participants.length + 1; // +1 to represent the host
+        }
+        else card.querySelector('#replace-participants').innerText = 1;
 
         document.getElementById('future-events').appendChild(card);
       });
