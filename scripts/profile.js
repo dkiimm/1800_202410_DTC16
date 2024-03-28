@@ -57,9 +57,11 @@ function DisplayCards(userID) {
         card.querySelector('#replace-time').innerText = doc.data().time;
         if (doc.data().participants != null) {
           participants = doc.data().participants
-          card.querySelector('#replace-participants').innerText = participants.length + 1; // +1 to represent the host
+          numPlayers = doc.data().numPlayers
+          participantText = participants.length + 1 + "/" + numPlayers; // +1 to represent the host
+          card.querySelector('#replace-participants').innerText = participantText;
         }
-        else card.querySelector('#replace-participants').innerText = 1;
+        else card.querySelector('#replace-participants').innerText = 1 + "/" + numPlayers;
 
         document.getElementById('future-events').appendChild(card);
       });
