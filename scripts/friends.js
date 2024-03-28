@@ -4,25 +4,32 @@ function DisplayCards(userID) {
 
   // Clear previous content
   futureEventsContainer.innerHTML = "";
-
+  
   db.collection('users')
     .doc(userID) // Filter by the specified userID
     .get()
     .then(doc => {
       if (doc.exists) {
-        let card = cardTemplate.content.cloneNode(true);
+        let friends = doc.data().friends || []; // Get the friends array or an empty array if it doesn't exist
 
-        // Add event listener to the card button
-        card.querySelector('#event-card').addEventListener("click", () => {
-          // Later add functionality to get data from the specific event
-          window.location = "event.html?docID=" + doc.id;
+        // Iterate over each friend in the friends array
+        friends.forEach(friend => {
+          let card = cardTemplate.content.cloneNode(true);
+
+          // Add event listener to the card button
+          card.querySelector('#event-card').addEventListener("click", () => {
+            // Set localStorage for the clicked friend ID
+            localStorage.setItem("friendID", userID);
+            // Redirect to the profile page
+            window.location = "profile.html?userID="+ friend;
+          });
+
+          // Set the friend name in the card
+          card.querySelector('#replace-friend').innerText = friend;
+
+          // Append the card to the container
+          futureEventsContainer.appendChild(card);
         });
-
-        // Set the sport text in the card
-        card.querySelector('#replace-sport').innerText = doc.data().friend;
-
-        // Append the card to the container
-        futureEventsContainer.appendChild(card);
       } else {
         console.log("No such document!");
       }
