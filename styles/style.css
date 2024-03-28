@@ -132,13 +132,10 @@
   margin-bottom: 0.5em;
 }
 
-#create_event_icon,
-#create_event_icon:visited {
+#bottom-navbar-icon,
+#bottom-navbar-icon:visited,
+#bottom-navbar-icon:hover {
   color: white;
-}
-
-#create_event_icon:hover {
-  color: black;
 }
 
 #create_heading {
