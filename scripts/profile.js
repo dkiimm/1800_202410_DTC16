@@ -1,6 +1,11 @@
+function GetTemplates() {
+  $('#templates').load('./text/eventCard.html', function () {
+    GetUser()
+  });
+}
+
 function GetUser() {
   let user = firebase.auth().currentUser;
-  console.log(user)
 
   if (!user) {
     console.error('No user signed in');
@@ -81,19 +86,22 @@ function addFriend() {
   hostRef.update({
     friends: firebase.firestore.FieldValue.arrayUnion(userPage)
   })
-  .then(() => {
-    console.log("Friend added successfully!");
-  })
-  .catch(error => {
-    console.log("Error adding friend:", error);
-  });
+    .then(() => {
+      console.log("Friend added successfully!");
+    })
+    .catch(error => {
+      console.log("Error adding friend:", error);
+    });
 }
 
+function setup() {
+  GetTemplates()
+}
 
 // Call the function to display the cards when the authentication state changes
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
-    GetUser();
+    setup();
   } else {
     console.error('No user signed in');
   }

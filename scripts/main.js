@@ -1,8 +1,12 @@
+function GetTemplates() {
+  $('#templates').load('./text/eventCard.html', function () {
+    DisplayCards();
+  });
+}
+
 function getNameFromAuth() {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
-      console.log(user.uid); //print the uid in the browser console
-      console.log(user.displayName);  //print the user name in the browser console
       userName = user.displayName;
       localStorage.setItem("userName", user.displayName)
 
@@ -52,7 +56,7 @@ function DisplayCards() {
 
 function setup() {
   getNameFromAuth();
-  DisplayCards();
+  GetTemplates();
 }
 
 $(document).ready(setup);
