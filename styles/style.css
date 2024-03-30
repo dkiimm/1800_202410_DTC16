@@ -169,3 +169,7 @@
   text-decoration: none;
   color:#239523
 }
+
+body{
+  font-style: system-ui;
+}

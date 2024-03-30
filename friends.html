@@ -72,13 +72,15 @@
     <!-- template for cards -->
     <template id="event_template">
       <button type="button" class="btn btn-outline-primary btn-lg btn-block" id="event-card" onclick="goToFriendProfile(this)"
-        style="width: 340px; box-shadow: 10px 10px 28px rgba(0, 0, 0, 0.6); border-color: black; padding-right:120px">
-        <div class="d-flex justify-content-between align-items-center" style="padding-left: 20px;">
+        style="box-shadow: 10px 10px 28px rgba(0, 0, 0, 0.6); border-color: black;">
+        <div class="d-flex justify-content-start align-items-center" style="padding-left: 10px;">
           <span class="material-symbols-outlined">
-            group
+            <span class="material-symbols-outlined" style="font-size: 40px;">
+              account_circle
+            </span>
           </span>
-          <p class="col-auto mb-0" style="font-size: 18px;" id="card-sport">
-            <span id="replace-friend">Loading...</span>
+          <p class="col-auto mb-0" style="font-size: 18px;" id="card-sport" >
+            <span id="replace-friend" style="margin-left: 70px;">Loading...</span>
           </p>
         </div>
       </button>

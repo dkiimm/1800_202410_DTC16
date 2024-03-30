@@ -44,55 +44,60 @@
 <body>
 
   <head>
-    <h1 class="text-center p-5" id="create_heading">Create Event</h1>
+    <h1 class="text-center p-4" id="create_heading">Create Event</h1>
   </head>
   <section id="create_event_options" class="d-flex flex-column " style="gap: 10px;">
     <!-- select sport -->
     <br>
-    <div class="d-flex" id="select-sport" style="margin-top: 10px; height: 50px;">
-      <div class="d-flex align-items-center px-4">
-        <span class="px-4" style="font-size: 20px;">Select Sport</span>
+    <div class="d-flex justify-content-between mx-4 my-3" id="select-sport" style="margin-top: 20px; height: 50px;">
+      <div class="d-flex align-items-center">
+        <span style="font-size: 20px;">Select Sport</span>
       </div>
       <div class="dropdown">
         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-          style="width: 100%; height: 50px;">
+          style="width: 200px; height: 50px;">
           Select Sport
         </button>
         <ul class="dropdown-menu" id="select-sport">
           <li><a class="dropdown-item" href="#" id="soccer">Soccer</a></li>
           <li><a class="dropdown-item" href="#" id="basketball">Basketball</a></li>
           <li><a class="dropdown-item" href="#" id="volleyball">Volleyball</a></li>
+          <li><a class="dropdown-item" href="#" id="tennis">Tennis</a></li>
         </ul>
       </div>
     </div>
     <!-- select date -->
-    <div class="px-3 py-3 d-flex" id="select_date" style="margin-top: 10px;">
-      <p class="px-4" style="font-size: 20px;">Select Date</p>
-      <input type="date" id="event_date" name="event_date" style="width: 100%; height: 50px;">
+    <div class="d-flex align-items-center justify-content-between mx-4 my-3" id="select_date" style="margin-top: 10px;">
+      <p class="d-flex align-items-center" style="font-size: 20px;">Select Date</p>
+      <input type="date" id="event_date" name="event_date" style="width: 200px; height: 50px;">
     </div>
     <!-- select time -->
-    <div class="px-3 d-flex" id="select_time">
-      <p class="px-4" style="font-size: 20px;">Select Time</p>
-      <input type="time" id="event_time" name="event_time" style="width: 100%; height: 50px;">
+    <div class="mx-4 d-flex justify-content-between my-3" id="select_time">
+      <p class="d-flex" style="font-size: 20px;">Select Time</p>
+      <input type="time" id="event_time" name="event_time" style="width: 200px; height: 50px;">
     </div>
     <!-- select num of participants -->
-    <div class="px-3 py-3 d-flex" id="select_participants">
-      <p class="px-4 d-flex justify-content-center" style="font-size: 20px;">Number of Participants</p>
-      <input type="text" id="event_participants" name="event_participants" style="width: 100%; height: 50px;">
+    <!-- <div class="mx-4 d-flex justify-content-between my-3" id="select_participants">
+      <p class="d-flex " style="font-size: 20px;">Number of Participants</p>
+      <input type="text" id="event_participants" name="event_participants" style="width: 223px; height: 50px;">
+    </div> -->
+    <div class="mx-4 d-flex justify-content-between my-3" id="select_participants">
+      <p class="d-flex" style="font-size: 20px;">Number of Participants</p>
+      <input type="text" id="event_participants" name="event_participants" style="width: 200px; height: 50px;">
     </div>
     <!-- location -->
-    <div class="px-3 d-flex" id="select_participants" style="padding-bottom: 20px;">
-      <p class="px-4 d-flex justify-content-center" style="font-size: 20px;">Location</p>
-      <input type="text" id="event_location" name="event_location" style="width: 100%; height: 50px;">
+    <div class="mx-4 d-flex justify-content-between my-3" id="select_participants">
+      <p class="d-flex" style="font-size: 20px;">Location</p>
+      <input type="text" id="event_location" name="event_location" style="width: 200px; height: 50px;">
     </div>
     <!-- skill level -->
-    <div class="d-flex" id="select-skill">
-      <div class="d-flex align-items-center px-4">
-        <span class="px-4" style="font-size: 20px; font-size: 20px;">Skill Level</span>
+    <div class="d-flex justify-content-between mx-4 my-3" id="select-skill">
+      <div class="d-flex align-items-center">
+        <span style="font-size: 20px; font-size: 20px;">Skill Level</span>
       </div>
       <div class="dropdown">
         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-          style="width: 100%; height: 50px;">
+          style="width: 200px; height: 50px;">
           Skill Level
         </button>
         <ul class="dropdown-menu" id="select-skill">
@@ -106,14 +111,15 @@
 
     <div class="d-flex justify-content-center">
       <!-- Cancel button -->
-      
+
       <div class="d-flex justify-content-center p-4" style="margin-top: 3rem;">
-        <button type="button" class="btn btn-danger" id="cancel_event_button" style="width: 150px;">Cancel</button> 
+        <button type="button" class="btn btn-danger" id="cancel_event_button" style="width: 150px;">Cancel</button>
       </div>
 
       <!-- Create button -->
       <div class="d-flex justify-content-center p-4" style="margin-top: 3rem;">
-        <button type="button" class="btn btn-success" id="create_event_button" style="width: 150px;">Create Event</button>
+        <button type="button" class="btn btn-success" id="create_event_button" style="width: 150px;">Create
+          Event</button>
       </div>
     </div>
   </section>
