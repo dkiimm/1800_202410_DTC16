@@ -1,8 +1,12 @@
+function GetTemplates() {
+  $('#templates').load('./text/eventCard.html', function () {
+    DisplayCards();
+  });
+}
+
 function getNameFromAuth() {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
-      console.log(user.uid); //print the uid in the browser console
-      console.log(user.displayName);  //print the user name in the browser console
       userName = user.displayName;
       localStorage.setItem("userName", user.displayName)
 
@@ -34,11 +38,15 @@ function DisplayCards() {
         card.querySelector('#replace-host').innerText = doc.data().host;
         card.querySelector('#replace-date').innerText = doc.data().date;
         card.querySelector('#replace-time').innerText = doc.data().time;
+
+        numPlayers = doc.data().numPlayers
         if (doc.data().participants != null) {
           participants = doc.data().participants
-          card.querySelector('#replace-participants').innerText = participants.length + 1; // +1 to represent the host
+          numPlayers = doc.data().numPlayers
+          participantText = participants.length + 1 + "/" + numPlayers; // +1 to represent the host
+          card.querySelector('#replace-participants').innerText = participantText;
         }
-        else card.querySelector('#replace-participants').innerText = 1;
+        else card.querySelector('#replace-participants').innerText = 1 + "/" + numPlayers;
 
 
 
@@ -52,7 +60,7 @@ function DisplayCards() {
 
 function setup() {
   getNameFromAuth();
-  DisplayCards();
+  GetTemplates();
 }
 
 $(document).ready(setup);

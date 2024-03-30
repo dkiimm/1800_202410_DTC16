@@ -1,6 +1,11 @@
+function GetTemplates() {
+  $('#templates').load('./text/eventCard.html', function () {
+    GetUser()
+  });
+}
+
 function GetUser() {
   let user = firebase.auth().currentUser;
-  console.log(user)
 
   if (!user) {
     console.error('No user signed in');
@@ -52,9 +57,11 @@ function DisplayCards(userID) {
         card.querySelector('#replace-time').innerText = doc.data().time;
         if (doc.data().participants != null) {
           participants = doc.data().participants
-          card.querySelector('#replace-participants').innerText = participants.length + 1; // +1 to represent the host
+          numPlayers = doc.data().numPlayers
+          participantText = participants.length + 1 + "/" + numPlayers; // +1 to represent the host
+          card.querySelector('#replace-participants').innerText = participantText;
         }
-        else card.querySelector('#replace-participants').innerText = 1;
+        else card.querySelector('#replace-participants').innerText = 1 + "/" + numPlayers;
 
         document.getElementById('future-events').appendChild(card);
       });
@@ -81,19 +88,22 @@ function addFriend() {
   hostRef.update({
     friends: firebase.firestore.FieldValue.arrayUnion(userPage)
   })
-  .then(() => {
-    console.log("Friend added successfully!");
-  })
-  .catch(error => {
-    console.log("Error adding friend:", error);
-  });
+    .then(() => {
+      console.log("Friend added successfully!");
+    })
+    .catch(error => {
+      console.log("Error adding friend:", error);
+    });
 }
 
+function setup() {
+  GetTemplates()
+}
 
 // Call the function to display the cards when the authentication state changes
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
-    GetUser();
+    setup();
   } else {
     console.error('No user signed in');
   }
