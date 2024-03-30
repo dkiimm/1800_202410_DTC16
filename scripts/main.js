@@ -31,7 +31,8 @@ function DisplayCards() {
           //Later add functionality to get data from the specific event
           window.location = "event.html?docID=" + doc.id;
         });
-
+        sport = doc.data().sport.toLowerCase();
+        card.querySelector('#sportLogo').innerText = "sports_" + sport;
         card.querySelector('#replace-sport').innerText = doc.data().sport;
         card.querySelector('#replace-skill').innerText = doc.data().skill; // Assuming 'skill' field exists in your data
         card.querySelector('#replace-location').innerText = doc.data().location;
