@@ -34,7 +34,7 @@ function DisplayCards() {
         sport = doc.data().sport.toLowerCase();
         card.querySelector('#sportLogo').innerText = "sports_" + sport;
         card.querySelector('#replace-sport').innerText = doc.data().sport;
-        card.querySelector('#replace-skill').innerText = doc.data().skill; // Assuming 'skill' field exists in your data
+        card.querySelector('#replace-skill').innerText = doc.data().skill; 
         card.querySelector('#replace-location').innerText = doc.data().location;
         card.querySelector('#replace-host').innerText = doc.data().host;
         card.querySelector('#replace-date').innerText = doc.data().date;
