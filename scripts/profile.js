@@ -55,13 +55,11 @@ function DisplayCards(userID) {
         card.querySelector('#replace-host').innerText = doc.data().host;
         card.querySelector('#replace-date').innerText = doc.data().date;
         card.querySelector('#replace-time').innerText = doc.data().time;
-        if (doc.data().participants != null) {
-          participants = doc.data().participants
-          numPlayers = doc.data().numPlayers
-          participantText = participants.length + 1 + "/" + numPlayers; // +1 to represent the host
-          card.querySelector('#replace-participants').innerText = participantText;
-        }
-        else card.querySelector('#replace-participants').innerText = 1 + "/" + numPlayers;
+
+        let participants = doc.data().participants || []; // Default to an empty array if participants is null
+        let numPlayers = doc.data().numPlayers || 1; // Default to 1 if numPlayers is null
+        let participantText = (participants.length + 1) + "/" + numPlayers; // +1 to represent the host
+        card.querySelector('#replace-participants').innerText = participantText;
 
         document.getElementById('future-events').appendChild(card);
       });
@@ -70,6 +68,7 @@ function DisplayCards(userID) {
       console.error('Error getting documents: ', error);
     });
 }
+
 
 
 function addFriend() {
