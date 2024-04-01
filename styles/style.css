@@ -118,7 +118,8 @@
   margin-bottom: 0.5em;
 }
 
-#event-back-button {
+#event-back-button,
+#event-delete-button {
   background-color: #d44450;
   color: white;
   outline: none !important;
@@ -162,11 +163,11 @@
   border-radius: 30px;
 }
 
-#logout{
+#logout {
   text-decoration: none;
-  color:#239523
+  color: #239523
 }
 
-body{
+body {
   font-style: system-ui;
 }

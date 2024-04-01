@@ -17,7 +17,7 @@ function GetUser() {
   if (userPage == null || userPage == localStorage.getItem("userName")) {
     $("#page-title").text("My hosted events")
     $("#friend-button").hide()
-    DisplayCards(user.uid)
+    DisplayCards(user.uid, true)
   }
   else {
     $("#page-title").text(userPage + "'s hosted events")
@@ -27,13 +27,13 @@ function GetUser() {
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
-          DisplayCards(doc.id)
+          DisplayCards(doc.id, false)
         })
       })
   }
 }
 
-function DisplayCards(userID) {
+function DisplayCards(userID, isOwner) {
   let cardTemplate = document.getElementById('event_template'); // Define cardTemplate
 
   db.collection('events')
@@ -49,6 +49,9 @@ function DisplayCards(userID) {
           // Later add functionality to get data from the specific event
           window.location = "event.html?docID=" + doc.id;
         });
+
+        if (isOwner) card.querySelector('#event-delete-button').style.display = 'block';
+
 
         card.querySelector('#replace-sport').innerText = doc.data().sport;
         card.querySelector('#replace-skill').innerText = doc.data().skill;
