@@ -16,6 +16,7 @@ function GetUser() {
   userPage = params.searchParams.get("userID");
   if (userPage == null || userPage == localStorage.getItem("userName")) {
     $("#page-title").text("My hosted events")
+    $("#friend-button").hide()
     DisplayCards(user.uid)
   }
   else {
