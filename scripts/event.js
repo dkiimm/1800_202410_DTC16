@@ -30,7 +30,9 @@ function displayEventInfo(setup) {
                 end = ", "
                 for (let i = 0; i < participants.length; i++) {
                     if (i == participants.length - 1) end = ""
-                    p_list += "<a href='profile.html?userID=" + participants[i] + "' id='profile-links'>" + participants[i] + end + "</a>"
+                    userLink = "<a href='profile.html?userID="
+                        + participants[i] + "' id='profile-links'>" + participants[i] + end + "</a>"
+                    p_list += userLink
 
                     if (participants[i] == localStorage.getItem("userName")) {
                         joined = true;
