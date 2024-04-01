@@ -19,6 +19,11 @@ function getNameFromAuth() {
 function DisplayCards() {
   let cardTemplate = document.getElementById('event_template'); // Define cardTemplate
 
+  //Currently unused
+  let params = new URL(window.location.href);
+  let filter = params.searchParams.get("filter");
+
+
   db.collection('events').orderBy('date').get()
     .then(querySnapshot => {
       document.getElementById('future-events').innerHTML = ""
@@ -34,7 +39,7 @@ function DisplayCards() {
         sport = doc.data().sport.toLowerCase();
         card.querySelector('#sportLogo').innerText = "sports_" + sport;
         card.querySelector('#replace-sport').innerText = doc.data().sport;
-        card.querySelector('#replace-skill').innerText = doc.data().skill; 
+        card.querySelector('#replace-skill').innerText = doc.data().skill;
         card.querySelector('#replace-location').innerText = doc.data().location;
         card.querySelector('#replace-host').innerText = doc.data().host;
         card.querySelector('#replace-date').innerText = doc.data().date;
