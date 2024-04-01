@@ -124,6 +124,26 @@ function clickBackBtn() {
     history.back()
 }
 
+function deleteEvent() {
+    db.collection("events")
+        .doc(localStorage.getItem("eventID"))
+        .get()
+        .then(doc => {
+            let message = "Are you sure you want to delete this event?"
+            deleteConfirmed = window.confirm(message)
+            if (deleteConfirmed) {
+                db.collection("events").doc(localStorage.getItem("eventID"))
+                    .delete()
+                    .then(() => {
+                        window.alert("Event deleted.")
+                        window.location = "main.html"
+                    }).catch((error) => {
+                        window.alert("Error deleting event, try again later.")
+                    });
+            }
+        })
+}
+
 function setup() {
     $("#event-join-button").click(clickJoinBtn)
     $("#event-back-button").click(clickBackBtn)
