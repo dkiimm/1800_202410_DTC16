@@ -115,6 +115,15 @@
           </div>
 
           <div class="col-auto" style="padding: 1em 1em 0 1em;">
+
+            <div style="display: none;" id="event-delete-button" onclick="deleteEvent()">
+              <p class="col-auto" style="margin: 0">
+                <span class="col-auto material-symbols-outlined" style="padding: 0">
+                  delete</span>
+                Delete
+              </p>
+            </div>
+
             <div id="event-join-button" style="text-align: center;">Loading...</div>
 
             <div id="event-back-button">
@@ -175,7 +184,7 @@
     </button>
 
     <!-- Fixed bottom nav -->
-  <nav id="footerPlaceholder"></nav>
+    <nav id="footerPlaceholder"></nav>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->

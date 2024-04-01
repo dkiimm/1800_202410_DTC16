@@ -40,7 +40,13 @@ function displayEventInfo(setup) {
                 $('#replace-participants').append(p_list)
             }
 
-            if (setup) updateJoinBtn(joined)
+            if (setup) {
+                if (doc.data().host == localStorage.getItem("userName")) {
+                    $("#event-join-button").hide()
+                    $("#event-delete-button").show()
+                }
+                else updateJoinBtn(joined)
+            }
 
         })
 }

@@ -17,7 +17,7 @@ function GetUser() {
   if (userPage == null || userPage == localStorage.getItem("userName")) {
     $("#page-title").text("My hosted events")
     $("#friend-button").hide()
-    DisplayCards(user.uid, true)
+    DisplayCards(user.uid)
   }
   else {
     $("#page-title").text(userPage + "'s hosted events")
@@ -27,13 +27,13 @@ function GetUser() {
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
-          DisplayCards(doc.id, false)
+          DisplayCards(doc.id)
         })
       })
   }
 }
 
-function DisplayCards(userID, isOwner) {
+function DisplayCards(userID) {
   let cardTemplate = document.getElementById('event_template'); // Define cardTemplate
 
   db.collection('events')
@@ -49,9 +49,6 @@ function DisplayCards(userID, isOwner) {
           // Later add functionality to get data from the specific event
           window.location = "event.html?docID=" + doc.id;
         });
-
-        if (isOwner) card.querySelector('#event-delete-button').style.display = 'block';
-
 
         card.querySelector('#replace-sport').innerText = doc.data().sport;
         card.querySelector('#replace-skill').innerText = doc.data().skill;
@@ -72,8 +69,6 @@ function DisplayCards(userID, isOwner) {
       console.error('Error getting documents: ', error);
     });
 }
-
-
 
 function addFriend() {
   let user = firebase.auth().currentUser;
