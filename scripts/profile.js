@@ -87,10 +87,10 @@ function addFriend() {
     friends: firebase.firestore.FieldValue.arrayUnion(userPage)
   })
     .then(() => {
-      console.log("Friend added successfully!");
+      window.alert("Friend added successfully!");
     })
     .catch(error => {
-      console.log("Error adding friend:", error);
+      window.alert("Error adding friend:", error);
     });
 }
 
