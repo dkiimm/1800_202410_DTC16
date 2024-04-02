@@ -37,36 +37,26 @@
 
 <body>
 
-
-
   <br>
-
-  <div class="d-flex align-items-center justify-content-center">
-    <span class="material-symbols-outlined" style="font-size: 90px;">
-      group
-    </span>
-    <span style="font-size: 40px;">My Friends</span>
+  <div>
+    <div class="d-flex justify-content-center">
+      <span class="material-symbols-outlined" style="font-size: 90px;">
+        group
+      </span>
+    </div>
+    <div class="d-flex justify-content-center">
+      <span style="font-size: 40px;" id="page-title">My Friends</span>
+    </div>
   </div>
-
-
-
-
 
   <!--Event card countainer-->
   <div class="container justify-content-center flex flex-column">
     <div class="col-auto justify-content-center flex" style="margin: 1em;">
       <!-- future event cards go here -->
-      <div class="row justify-content-center d-flex" style="width: 100%; margin: 0;" id="future-events"> Loading...</div>
-      <br>
-      <br>
-      <br>
-      <a href="index.html" id="logout">Log Out</a>
+      <div class="row justify-content-center d-flex" style="width: 100%; margin: 0;" id="future-events">
+        <p style="text-align: center; font-size: 30px; color: #3a3a3a" id="loading">Loading...</p>
+      </div>
     </div>
-
-
-
-
-
 
     <!-- template for cards -->
     <template id="event_template">
@@ -88,12 +78,9 @@
     <!--Empty space to account for bottom navbar-->
     <br>
 
-
-
     <br>
     <br>
     <br>
-
 
     <nav id="footerPlaceholder"></nav>
 

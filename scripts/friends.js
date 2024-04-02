@@ -24,17 +24,23 @@ function fetchAndDisplayCards(userID) {
     return;
   }
 
-  // Clear previous content
-  futureEventsContainer.innerHTML = "";
-
   db.collection('users')
     .doc(userID)
     .get()
     .then(doc => {
+      empty = true
+      $('#loading').text("No friends found.")
+
       if (doc.exists) {
         let friends = doc.data().friends || [];
 
         friends.forEach(friend => {
+
+          if (empty == true) {
+            empty = false
+            document.getElementById('future-events').innerHTML = "";
+          }
+
           let card = cardTemplate.content.cloneNode(true);
           let cardButton = card.querySelector('#event-card');
           let replaceFriendSpan = card.querySelector('#replace-friend');
