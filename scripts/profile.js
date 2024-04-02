@@ -125,7 +125,6 @@ function updateFriend(isAdding) {
       friends: firebase.firestore.FieldValue.arrayUnion(userPage)
     })
       .then(() => {
-        window.alert("Friend added successfully!");
         displayFriendButton(true)
       })
       .catch(() => {
@@ -137,7 +136,6 @@ function updateFriend(isAdding) {
       friends: firebase.firestore.FieldValue.arrayRemove(userPage)
     })
       .then(() => {
-        window.alert("Friend removed successfully!");
         displayFriendButton(false)
       })
       .catch(() => {
