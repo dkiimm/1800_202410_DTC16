@@ -27,7 +27,7 @@ function confirmCreateEvent() {
     return; // Exit the function early
   }
 
-  var message = "Confirm Event:\nSport: " + sport + "\nDate: " + date + "\nTime: " + time + "\nSkill: " + skill + "\nLocation: " + location + "\nNumber of Players: " + numPlayers;
+  var message = "Confirm Event:\nSport: " + sport + "\nDate: " + date + "\nStart Time: " + time + "\nSkill: " + skill + "\nLocation: " + location + "\nNumber of Players: " + numPlayers;
   var result = window.confirm(message);
 
   if (result) {
@@ -72,7 +72,7 @@ function confirmCreateEvent() {
 }
 
 function cancelCreate() {
-  window.location.href = "main.html";
+  window.location.href = "profile.html";
 }
 
 function setup() {
