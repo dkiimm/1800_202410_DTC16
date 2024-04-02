@@ -20,7 +20,7 @@ function GetUser() {
   }
   else {
     $("#page-title").text(userPage + "'s profile")
-    $("#friend-button").show()
+    CheckFriendStatus(userPage)
 
     db.collection('users')
       .where("name", "==", userPage)
@@ -33,11 +33,42 @@ function GetUser() {
   }
 }
 
-function DisplayCards(userID) {
+function CheckFriendStatus(profileID) {
+  user = firebase.auth().currentUser;
+
+  db.collection('users')
+    .doc(user.uid)
+    .get()
+    .then(doc => {
+      friends = doc.data().friends
+      added = false
+
+      if (friends != null && friends.length != 0) {
+        if (friends.find(f => f == profileID)) {
+          added = true
+        }
+      }
+
+      displayFriendButton(added)
+    })
+}
+
+function displayFriendButton(isAdded) {
+  if (isAdded) {
+    $("#friend-button").hide()
+    $("#unfriend-button").show()
+  }
+  else {
+    $("#friend-button").show()
+    $("#unfriend-button").hide()
+  }
+}
+
+function DisplayCards(profileID) {
   let cardTemplate = document.getElementById('event_template'); // Define cardTemplate
 
   db.collection('events')
-    .where("author", "==", userID)
+    .where("author", "==", profileID)
     .get()
     .then(querySnapshot => {
       empty = true
@@ -76,7 +107,7 @@ function DisplayCards(userID) {
     });
 }
 
-function addFriend() {
+function updateFriend(isAdding) {
   let user = firebase.auth().currentUser;
   if (!user) {
     console.error('No user signed in');
@@ -89,15 +120,30 @@ function addFriend() {
   let hostRef = db.collection("users").doc(userID);
 
   // Add the friend directly to the user's document
-  hostRef.update({
-    friends: firebase.firestore.FieldValue.arrayUnion(userPage)
-  })
-    .then(() => {
-      window.alert("Friend added successfully!");
+  if (isAdding) {
+    hostRef.update({
+      friends: firebase.firestore.FieldValue.arrayUnion(userPage)
     })
-    .catch(error => {
-      window.alert("Error adding friend:", error);
-    });
+      .then(() => {
+        window.alert("Friend added successfully!");
+        displayFriendButton(true)
+      })
+      .catch(() => {
+        window.alert("Error adding friend, plese try again later");
+      });
+  }
+  else {
+    hostRef.update({
+      friends: firebase.firestore.FieldValue.arrayRemove(userPage)
+    })
+      .then(() => {
+        window.alert("Friend removed successfully!");
+        displayFriendButton(false)
+      })
+      .catch(() => {
+        window.alert("Error removing friend, plese try again later");
+      });
+  }
 }
 
 function setup() {

@@ -50,14 +50,16 @@
     </div>
   </div>
 
-  <!-- Friend Button -->
+  <!-- Friend Buttons -->
   <br>
   <div class="d-flex align-items-center justify-content-center">
-    <button style="display: none;" id="friend-button" class="btn btn-success" onclick="addFriend()">Add as
+    <button style="display: none;" id="friend-button" class="btn btn-success" onclick="updateFriend(true)">Add as
       Friend</button>
   </div>
-  <br>
-
+  <div class="d-flex align-items-center justify-content-center">
+    <button style="display: none;" id="unfriend-button" class="btn btn-danger"
+      onclick="updateFriend(false)">Unfriend</button>
+  </div>
 
   <!--Event card countainer-->
   <div class="container justify-content-center flex flex-column">
