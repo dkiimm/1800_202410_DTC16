@@ -38,17 +38,23 @@
 <body>
   <br>
 
-  <div class="d-flex align-items-center justify-content-center">
-    <span class="material-symbols-outlined" style="font-size: 90px;">
-      account_circle
-    </span>
-    <span style="font-size: 40px;" id="page-title">Loading...</span>
+  <!-- Profile Banner -->
+  <div>
+    <div class="d-flex justify-content-center">
+      <span class="material-symbols-outlined" style="font-size: 90px;">
+        account_circle
+      </span>
+    </div>
+    <div class="d-flex justify-content-center">
+      <span style="font-size: 40px;" id="page-title">Loading...</span>
+    </div>
   </div>
 
-  <!-- ------------------------------ -->
+  <!-- Friend Button -->
   <br>
   <div class="d-flex align-items-center justify-content-center">
-    <button id="friend-button" class="btn btn-success" onclick="addFriend()">Add as Friend</button>
+    <button style="display: none;" id="friend-button" class="btn btn-success" onclick="addFriend()">Add as
+      Friend</button>
   </div>
   <br>
 
@@ -56,9 +62,12 @@
   <!--Event card countainer-->
   <div class="container justify-content-center flex flex-column">
     <div class="col-auto justify-content-center flex" style="margin: 1em;">
+      <div class="row justify-content-center d-flex" style="width: 100%; margin: 0;">
+        <p style="font-weight: bold; text-align: center; font-size: 30px; color: #3a3a3a">Hosted Events:</p>
+      </div>
       <!-- future event cards go here -->
       <div class="row justify-content-center d-flex" style="width: 100%; margin: 0;" id="future-events">
-        <p style="text-align: center; font-size: 30px; color: #3a3a3a">Loading...</p>
+        <p style="text-align: center; font-size: 30px; color: #3a3a3a" id="loading">Loading...</p>
       </div>
       <br>
       <br>

@@ -15,12 +15,12 @@ function GetUser() {
   params = new URL(window.location.href);
   userPage = params.searchParams.get("userID");
   if (userPage == null || userPage == localStorage.getItem("userName")) {
-    $("#page-title").text("My hosted events")
-    $("#friend-button").hide()
+    $("#page-title").text("My profile")
     DisplayCards(user.uid)
   }
   else {
-    $("#page-title").text(userPage + "'s hosted events")
+    $("#page-title").text(userPage + "'s profile")
+    $("#friend-button").show()
 
     db.collection('users')
       .where("name", "==", userPage)
@@ -40,9 +40,15 @@ function DisplayCards(userID) {
     .where("author", "==", userID)
     .get()
     .then(querySnapshot => {
-      document.getElementById('future-events').innerHTML = "";
+      empty = true
+      $('#loading').text("No events found.")
 
       querySnapshot.forEach(doc => {
+        if (empty == true) {
+          empty = false
+          document.getElementById('future-events').innerHTML = "";
+        }
+
         let card = cardTemplate.content.cloneNode(true);
 
         card.querySelector('#event-card').addEventListener("click", () => {
