@@ -16,6 +16,7 @@ function GetUser() {
   userPage = params.searchParams.get("userID");
   if (userPage == null || userPage == localStorage.getItem("userName")) {
     $("#page-title").text("My profile")
+    $("#logout-button").show()
     DisplayCards(user.uid)
   }
   else {

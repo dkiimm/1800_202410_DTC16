@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>My BCIT Project</title>
   <meta name="comp1800 template" content="My 1800 App" />
@@ -48,15 +49,18 @@
     </div>
   </div>
 
-  <!-- Friend Buttons -->
   <br>
+  <div class="d-flex justify-content-center">
+    <a href="index.html" id="logout-button" style="display: none;">Log Out</a>
+  </div>
+
+  <!-- Friend Buttons -->
   <div class="d-flex align-items-center justify-content-center">
-    <button style="display: none;" id="friend-button" class="btn btn-success" onclick="updateFriend(true)">Add as
+    <button style="display: none;" id="friend-button" onclick="updateFriend(true)">Add as
       Friend</button>
   </div>
   <div class="d-flex align-items-center justify-content-center">
-    <button style="display: none;" id="unfriend-button" class="btn btn-danger"
-      onclick="updateFriend(false)">Unfriend</button>
+    <button style="display: none;" id="unfriend-button" onclick="updateFriend(false)">Unfriend</button>
   </div>
 
   <!--Event card countainer-->
@@ -72,7 +76,6 @@
       <br>
       <br>
       <br>
-      <a href="index.html">Log Out</a>
     </div>
 
     <!-- template for cards -->
@@ -99,4 +102,5 @@
     <!-- <script src="./scripts/filters.js"></script> -->
     <script src="./scripts/profile.js"></script>
 </body>
+
 </html>

@@ -13,11 +13,7 @@
   color: #badeba;
 }
 
-.bg-info {
-  background-color: #239523 !important;
-  color: white;
-}
-
+.bg-info,
 .log-in-button {
   background-color: #239523 !important;
   color: white;
@@ -90,7 +86,8 @@
   padding: 1em 1em;
 }
 
-#event-join-button {
+#event-join-button,
+#friend-button {
   background-color: #239523;
   color: white;
   outline: none !important;
@@ -119,12 +116,15 @@
 }
 
 #event-back-button,
-#event-delete-button {
+#event-delete-button,
+#logout-button,
+#unfriend-button {
   background-color: #d44450;
   color: white;
   outline: none !important;
   font-weight: bold;
   font-size: 20px;
+  text-decoration: none;
   height: 100%;
   text-align: center;
   display: block;
