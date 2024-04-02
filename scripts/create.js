@@ -56,6 +56,7 @@ function confirmCreateEvent() {
           console.log("Document written with ID: ", docRef.id);
           // Optionally, you can redirect the user to another page or perform other actions here
           window.location.href = "profile.html";
+          // window.location = "event.html?docID=" + ID;
         })
         .catch(function(error) {
           console.error("Error adding document: ", error);
