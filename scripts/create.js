@@ -55,7 +55,7 @@ function confirmCreateEvent() {
         .then(function(docRef) {
           console.log("Document written with ID: ", docRef.id);
           // Optionally, you can redirect the user to another page or perform other actions here
-          window.location.href = "main.html";
+          window.location.href = "profile.html";
         })
         .catch(function(error) {
           console.error("Error adding document: ", error);
@@ -72,7 +72,7 @@ function confirmCreateEvent() {
 }
 
 function cancelCreate() {
-  window.location.href = "profile.html";
+  window.location.href = "main.html";
 }
 
 function setup() {
