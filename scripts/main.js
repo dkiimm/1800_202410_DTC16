@@ -56,7 +56,7 @@ function DisplayCards() {
 
 
 
-        document.getElementById('future-events').prepend(card);
+        document.getElementById('future-events').append(card);
       });
     })
     .catch(error => {
