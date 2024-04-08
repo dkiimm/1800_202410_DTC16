@@ -12,6 +12,8 @@ function displayEventInfo(setup) {
         .doc(ID)
         .get()
         .then(doc => {
+            sport = doc.data().sport.toLowerCase();
+            $('#sportLogo').text("sports_" + sport);
             $('#replace-sport').text(doc.data().sport);
             $('#replace-skill').text(doc.data().skill);
             $('#replace-location').text(doc.data().location);

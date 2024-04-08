@@ -88,6 +88,8 @@ function DisplayCards(profileID) {
           window.location = "event.html?docID=" + doc.id;
         });
 
+        sport = doc.data().sport.toLowerCase();
+        card.querySelector('#sportLogo').innerText = "sports_" + sport;
         card.querySelector('#replace-sport').innerText = doc.data().sport;
         card.querySelector('#replace-skill').innerText = doc.data().skill;
         card.querySelector('#replace-location').innerText = doc.data().location;
