@@ -9,7 +9,6 @@ function getNameFromAuth() {
     if (user) {
       userName = user.displayName;
       localStorage.setItem("userName", user.displayName)
-
     } else {
       localStorage.setItem("userName", null)
     }
@@ -27,7 +26,6 @@ function DisplayCards() {
       document.getElementById('future-events').innerHTML = ""
 
       querySnapshot.forEach(doc => {
-
         let card = cardTemplate.content.cloneNode(true);
 
         card.querySelector('#event-card').addEventListener("click", () => {
@@ -51,9 +49,6 @@ function DisplayCards() {
           card.querySelector('#replace-participants').innerText = participantText;
         }
         else card.querySelector('#replace-participants').innerText = 1 + "/" + numPlayers;
-
-
-
         document.getElementById('future-events').append(card);
       });
     })
