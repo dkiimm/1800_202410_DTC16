@@ -18,11 +18,9 @@ function getNameFromAuth() {
 
 function DisplayCards() {
   let cardTemplate = document.getElementById('event_template'); // Define cardTemplate
-
   //Currently unused
   let params = new URL(window.location.href);
   let filter = params.searchParams.get("filter");
-
 
   db.collection('events').orderBy('date').get()
     .then(querySnapshot => {

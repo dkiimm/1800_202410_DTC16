@@ -1,4 +1,3 @@
-
 function displaySelectedSkill() {
   var selected = $(this).text();
   $("#select-skill .dropdown-toggle").text(selected);

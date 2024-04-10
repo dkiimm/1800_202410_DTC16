@@ -1,7 +1,3 @@
-//---------------------------------------------------
-// This function loads the parts of your skeleton 
-// (navbar, footer, and other things) into html doc. 
-//---------------------------------------------------
 function loadSkeleton() {
 
     firebase.auth().onAuthStateChanged(function (user) {
@@ -17,4 +13,4 @@ function loadSkeleton() {
         }
     });
 }
-loadSkeleton(); //invoke the function
+loadSkeleton(); 
