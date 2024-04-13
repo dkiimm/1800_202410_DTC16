@@ -1,7 +1,14 @@
 # Project Title
+Good Sport App
 
 ## 1. Project Description
-This browser based web application allows users to join and create sport events and add other users as friends to play again in the future.
+Our team, DTC16, is developing a web application to help sports enthusiasts find other enthusiasts to play with and create connections by helping them find nearby sports events and host sporting events.
+
+Good Sport allows you to find events near you so that you can play your favourite sport. 
+
+If you can’t find one you want to join, simply create an event specifically tailored to your wants.
+
+And finally,  we recognize that sports are about more than just the game; they're about the people. That's why Good Sport allows you to connect with other players by adding them as friends so that you can make meaningful connections beyond the playing field.
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
@@ -21,15 +28,9 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 ## 4. Complete setup/installion/usage
 State what a user needs to do when they come to your project.  How do others start using your code or application?
 Here are the steps ...
-* Sign up or log in, you will be directed to the main events page, where you can see all the events happening near you. 
-Find an event that interests you? Click on the event and join! If you want to create an event, go to the create page and create your event. You can also add other users as friends by clicking on their username and adding them as a friend. Hope you enjoy our app!
-* Select an event and join it
-* Create an event through the + navbar icon
-* See created events on the profile page
-* Delete events by clicking the delete button when viewing your own events
-* Go to other profiles by clicking their usernames
-* Add other profiles as friends through the add friend button
-* View added profiles in the friends tab
+* Simply sign up and explore the app. When you get logged in, you will be directed to the main events page, where you can see all the events happening near you. 
+* Find an event that interests you? Click on the event and join! If you want to create an event, go to the create page and create your event.
+* You can also add other users as friends by clicking on their username and adding them as a friend. Hope you enjoy our app!
 
 ## 5. Known Bugs and Limitations
 Here are some known bugs:
