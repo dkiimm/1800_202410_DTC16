@@ -1,8 +1,7 @@
 # Project Title
 
 ## 1. Project Description
-State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-This browser based web application to ... 
+This browser based web application allows users to join and create sport events and add other users as friends to play again in the future.
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
