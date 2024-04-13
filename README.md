@@ -21,10 +21,15 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 ## 4. Complete setup/installion/usage
 State what a user needs to do when they come to your project.  How do others start using your code or application?
 Here are the steps ...
-* Simply sign up and explore the app. When you get logged in, you will be directed to the main events page, where you can see all the events happening near you. 
+* Sign up or log in, you will be directed to the main events page, where you can see all the events happening near you. 
 Find an event that interests you? Click on the event and join! If you want to create an event, go to the create page and create your event. You can also add other users as friends by clicking on their username and adding them as a friend. Hope you enjoy our app!
-* ...
-* ...
+* Select an event and join it
+* Create an event through the + navbar icon
+* See created events on the profile page
+* Delete events by clicking the delete button when viewing your own events
+* Go to other profiles by clicking their usernames
+* Add other profiles as friends through the add friend button
+* View added profiles in the friends tab
 
 ## 5. Known Bugs and Limitations
 Here are some known bugs:
