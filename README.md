@@ -13,7 +13,7 @@ And finally,  we recognize that sports are about more than just the game; they'r
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
 * My name is João, which english speakers struggle to pronounce, so you can call me "Jao"
-* Myung Kyu (Daniel) Kim. I am excited to start this project.
+* Myung Kyu (Daniel) Kim. I am really excited about this product and I hope you like it too.
 
 	
 ## 3. Technologies and Resources Used
